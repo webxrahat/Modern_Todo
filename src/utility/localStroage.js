@@ -13,9 +13,9 @@ const setLocalStroage = (cart) => {
 };
 
 const setToLs = (id) => {
- const setCart = getLocalItem();
- setCart.push(id);
- setLocalStroage(cart);
+ const setCartItem = getLocalItem();
+ setCartItem.push(id);
+ setLocalStroage(setCartItem);
 };
 
 export { setToLs };

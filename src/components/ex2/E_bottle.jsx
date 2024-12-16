@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import GridBottle from "./GirdBottle";
+import { setToLs } from "../../utility/localStroage";
 
 const E_bottle = () => {
  const [showBottle, setShowBottle] = useState([]);
@@ -16,6 +17,8 @@ const E_bottle = () => {
   const showCart = [...cart, bottle];
 
   setCart(showCart);
+
+  setToLs(bottle.id);
   // console.log(showCart);
  };
 
