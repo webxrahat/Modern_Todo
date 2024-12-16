@@ -1,15 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { BsFillCheckCircleFill } from "react-icons/bs";
 import { MdDelete } from "react-icons/md";
 
 const Task = () => {
+ const [toDoTask, setToDoTask] = useState("");
+
  const handleSubmit = (e) => {
   e.preventDefault();
 
   const form = e.target;
   const name = form.name.value;
+  const val = name;
+  setToDoTask((pre) => [...pre, val]);
 
-  console.log(name);
+  // console.log(val);
  };
 
  return (
@@ -33,6 +37,8 @@ const Task = () => {
    <div className="flex items-center justify-center mt-8">
     <div className="flex items-center bg-white shadow-lg p-4 rounded-lg w-80">
      <p className="text-lg font-medium text-gray-800">Mango</p>
+     <p className="text-lg font-medium text-gray-800">{toDoTask}</p>
+
      <div className="flex space-x-2 ml-auto">
       <button
        className="text-teal-500 hover:text-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-400 rounded"

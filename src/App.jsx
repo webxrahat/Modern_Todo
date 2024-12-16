@@ -1,9 +1,9 @@
-import Task from "./components/Task";
+import NewTask from "./components/NewTask";
 
 export default function App() {
  return (
   <>
-   <Task />
+   <NewTask />
   </>
  );
 }
