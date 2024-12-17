@@ -18,4 +18,4 @@ const setToLs = (id) => {
  setLocalStroage(setCartItem);
 };
 
-export { setToLs };
+export { setToLs, getLocalItem };
