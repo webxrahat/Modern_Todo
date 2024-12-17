@@ -1,6 +1,6 @@
 import React from "react";
 
-const ShowCart = ({ cart }) => {
+const ShowCart = ({ cart, handleDelete }) => {
  return (
   <div>
    {" "}
@@ -12,6 +12,14 @@ const ShowCart = ({ cart }) => {
      <div key={i}>
       <div>
        <img src={sCart.photo} alt="img" className="w-16" />
+      </div>
+      <div>
+       <button
+        className="bg-orange-200 px-2"
+        onClick={() => handleDelete(sCart.id)}
+       >
+        Delete
+       </button>
       </div>
      </div>
     ))}

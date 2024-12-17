@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import GridBottle from "./GirdBottle";
-import { getLocalItem, setToLs } from "../../utility/localStroage";
+import {
+ deleteStroage,
+ getLocalItem,
+ setToLs,
+} from "../../utility/localStroage";
 import ShowCart from "./ShowCart";
 
 const E_bottle = () => {
@@ -40,13 +44,23 @@ const E_bottle = () => {
   // console.log(showCart);
  };
 
+ const handleDelete = (id) => {
+  const remove = cart.filter((bottle) => bottle.id !== id);
+
+  setCart(remove);
+
+  deleteStroage(id);
+  // setCart(localRemove);
+  // console.log("click");
+ };
+
  return (
   <div className="max-w-7xl mx-auto">
    <div className="my-8  flex justify-between">
     <h1 className="text-2xl font-bold ">
      {showBottle.length} Bottles are available here
     </h1>
-    <ShowCart cart={cart} />
+    <ShowCart cart={cart} handleDelete={handleDelete} />
    </div>
    <div className="grid grid-cols-5 gap-5">
     {showBottle.map((singleBottle, index) => (

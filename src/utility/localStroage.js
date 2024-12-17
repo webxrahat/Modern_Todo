@@ -12,10 +12,16 @@ const setLocalStroage = (cart) => {
  localStorage.setItem("cart", setToCart);
 };
 
+const deleteStroage = (id) => {
+ const cartDelete = getLocalItem();
+ const singleCart = cartDelete.filter((idx) => idx !== id);
+ setLocalStroage(singleCart);
+};
+
 const setToLs = (id) => {
  const setCartItem = getLocalItem();
  setCartItem.push(id);
  setLocalStroage(setCartItem);
 };
 
-export { setToLs, getLocalItem };
+export { setToLs, getLocalItem, deleteStroage };
