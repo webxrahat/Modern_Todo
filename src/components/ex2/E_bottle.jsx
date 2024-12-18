@@ -23,7 +23,6 @@ const E_bottle = () => {
    const getItems = getLocalItem();
    const saveCart = [];
    for (const id of getItems) {
-    // console.log(id);
     const cartId = showBottle.find((itemId) => itemId.id === id);
     if (cartId) {
      saveCart.push(cartId);
